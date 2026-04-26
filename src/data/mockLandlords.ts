@@ -35,7 +35,7 @@ export const mockLandlords: Landlord[] = [
     responseTimeLabel: "Replies within a week",
     yearsActive: 12,
     listingsCount: 86,
-    bio: "Larger operator with mixed reviews. Student Roost highlights patterns from verified renters to help you compare fairly.",
+    bio: "Larger operator with mixed reviews. Scotty's Courie highlights patterns from verified renters to help you compare fairly.",
     moderationNote:
       "We flagged repeated themes in reviews about deposit timelines; the manager posted a clarifying policy update.",
   },

@@ -2,7 +2,8 @@ import type { Listing } from "../types/models";
 
 /**
  * Mock listings around Carnegie Mellon / Oakland / nearby Pittsburgh neighborhoods.
- * `lat` / `lng` are real-ish coordinates for Google Maps pins centered on the CMU area.
+ * `lat` / `lng` are geocodes (OpenStreetMap Nominatim) near each listing photo’s real
+ * block — the map pins are these listings only (not data from the Maps/Places API).
  */
 export const mockListings: Listing[] = [
   {
@@ -24,10 +25,9 @@ export const mockListings: Listing[] = [
     landlordId: "ll_aurora",
     summary: "Corner unit with good daylight, in-unit laundry, and a quiet building popular with grad students.",
     highlights: ["In-unit laundry", "Bike storage", "Quarterly safety walkthroughs"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1522708323390-24dd86451ba7?auto=format&fit=crop&w=1200&q=80",
-    lat: 40.4491,
-    lng: -79.9514,
+    imageUrl: "/images/listings/dithridge-oakland.jpg",
+    lat: 40.4491398,
+    lng: -79.951941,
   },
   {
     id: "lst_102",
@@ -48,10 +48,9 @@ export const mockListings: Listing[] = [
     landlordId: "ll_maple",
     summary: "Compact but efficient layout. Great if you want minimal move-in friction and a predictable semester rent schedule.",
     highlights: ["Utilities included", "Furniture included", "Semester billing available"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
-    lat: 40.4372,
-    lng: -79.9228,
+    imageUrl: "/images/listings/aylesboro-squirrel-hill.jpg",
+    lat: 40.4394129,
+    lng: -79.9283508,
   },
   {
     id: "lst_103",
@@ -72,10 +71,9 @@ export const mockListings: Listing[] = [
     landlordId: "ll_riverbend",
     summary: "Classic student house near Walnut St. Split rent three ways for affordability; expect typical older-home quirks.",
     highlights: ["Off-street parking (2)", "Porch", "Large kitchen"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80",
-    lat: 40.4516,
-    lng: -79.9312,
+    imageUrl: "/images/listings/morewood-shadyside.jpg",
+    lat: 40.4530014,
+    lng: -79.9438521,
   },
   {
     id: "lst_104",
@@ -96,10 +94,9 @@ export const mockListings: Listing[] = [
     landlordId: "ll_aurora",
     summary: "Well-lit hallways, secure entry, and a small study nook that makes midterms a little less chaotic.",
     highlights: ["Secure entry", "Study nook", "On-site maintenance"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    lat: 40.4436,
-    lng: -79.9482,
+    imageUrl: "/images/listings/neville-oakland.jpg",
+    lat: 40.4485554,
+    lng: -79.9484969,
   },
   {
     id: "lst_105",
@@ -120,9 +117,8 @@ export const mockListings: Listing[] = [
     landlordId: "ll_riverbend",
     summary: "Lower rent per person near Fifth / Forbes corridors. Furnished common areas; bedrooms are unfurnished.",
     highlights: ["Port Authority nearby", "Furnished common areas", "Roommate matching pilot"],
-    imageUrl:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-    lat: 40.4354,
-    lng: -79.9618,
+    imageUrl: "/images/listings/south-craig-oakland.jpg",
+    lat: 40.4460785,
+    lng: -79.9486414,
   },
 ];

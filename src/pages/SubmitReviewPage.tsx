@@ -209,7 +209,8 @@ export function SubmitReviewPage() {
           <Card className="p-6">
             <p className="text-sm font-extrabold text-courie-ink">Moderation notes (example)</p>
             <p className="mt-2 text-sm font-semibold leading-relaxed text-courie-muted">
-              Student Roost could publish how reviews are screened, what counts as evidence, and how landlords can respond
+              Scotty's Courie could publish how reviews are screened, what counts as evidence, and how landlords can
+              respond
               without chilling honest criticism.
             </p>
           </Card>

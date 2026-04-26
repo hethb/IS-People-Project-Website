@@ -5,6 +5,7 @@ import { LandlordProfilePage } from "./pages/LandlordProfilePage";
 import { ListingsPage } from "./pages/ListingsPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { PostListingPage } from "./pages/PostListingPage";
+import { ProjectPage } from "./pages/ProjectPage";
 import { PropertyDetailPage } from "./pages/PropertyDetailPage";
 import { SignInPage } from "./pages/SignInPage";
 import { SignUpPage } from "./pages/SignUpPage";
@@ -19,6 +20,7 @@ export default function App() {
     <AppShell>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/project" element={<ProjectPage />} />
         <Route path="/listings" element={<ListingsPage />} />
         <Route path="/listings/new" element={<PostListingPage />} />
         <Route path="/listings/:listingId" element={<PropertyDetailPage />} />

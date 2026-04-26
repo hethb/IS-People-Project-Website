@@ -72,8 +72,8 @@ function CampusMapFrame({
 
   const aside = browse
     ? usesGoogle
-      ? "Pan and zoom are softly limited to the Pittsburgh area. Click a pin, then open the listing card."
-      : "No API key required (OpenStreetMap). Add VITE_GOOGLE_MAPS_API_KEY in .env if you want Google’s basemap instead."
+      ? "The map is Google’s basemap only. Red pins are this app’s current listing results (not Google’s businesses). Pan/zoom are loosely limited to Pittsburgh; click a pin, then the listing."
+      : "The map is OpenStreetMap. Markers are only the listings in your results (same as the card grid), not random map points. No API key required for tiles."
     : usesGoogle
       ? "Pins match listing coordinates around Oakland, Shadyside, and Squirrel Hill."
       : "Tiles © OpenStreetMap contributors. Set VITE_GOOGLE_MAPS_API_KEY to switch to Google Maps if you prefer.";
@@ -128,7 +128,7 @@ type GoogleProps = Props & { apiKey: string };
 
 function GoogleCampusMap({ apiKey, listings, activeListingId, layout }: GoogleProps) {
   const { isLoaded, loadError } = useJsApiLoader({
-    id: "student-roost-google-maps",
+    id: "scottys-courie-google-maps",
     googleMapsApiKey: apiKey,
     // `marker` library is required for the advanced marker library in newer APIs; basic Marker works without it.
   });

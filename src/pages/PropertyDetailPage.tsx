@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { ListingMap } from "../components/listings/ListingMap";
+import { Reveal, Stagger, StaggerItem } from "../components/motion/scroll";
 import { ReviewCard } from "../components/reviews/ReviewCard";
 import { SafetyMeter } from "../components/trust/SafetyMeter";
 import { TrustCallout } from "../components/trust/TrustCallout";
@@ -38,13 +39,16 @@ export function PropertyDetailPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <div className="flex flex-wrap gap-2">
-        <Badge tone="brand">{listing.neighborhood}</Badge>
-        <Badge tone="neutral">{listing.distanceToCampus} from campus</Badge>
-        {listing.petFriendly ? <Badge tone="success">Pet friendly</Badge> : <Badge tone="warning">No pets</Badge>}
-      </div>
+      <Reveal y={14}>
+        <div className="flex flex-wrap gap-2">
+          <Badge tone="brand">{listing.neighborhood}</Badge>
+          <Badge tone="neutral">{listing.distanceToCampus} from campus</Badge>
+          {listing.petFriendly ? <Badge tone="success">Pet friendly</Badge> : <Badge tone="warning">No pets</Badge>}
+        </div>
+      </Reveal>
 
       <div className="mt-4 grid gap-6 lg:grid-cols-2 lg:items-start">
+        <Reveal x={-18} className="min-w-0" amount={0.15}>
         <div>
           <h1 className="text-3xl font-black tracking-tight text-courie-ink">{listing.title}</h1>
           <div className="mt-3">
@@ -73,7 +77,9 @@ export function PropertyDetailPage() {
             />
           </div>
         </div>
+        </Reveal>
 
+        <Reveal x={18} delay={0.06} className="min-w-0 space-y-5" amount={0.12}>
         <div className="space-y-5">
           <SafetyMeter score={listing.safetyScore} />
 
@@ -127,9 +133,11 @@ export function PropertyDetailPage() {
             </Link>
           </div>
         </div>
+        </Reveal>
       </div>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
+        <Reveal y={22} className="min-w-0" amount={0.18}>
         <Card className="p-6">
           <h2 className="text-lg font-extrabold text-courie-ink">Highlights</h2>
           <ul className="mt-4 space-y-3 text-sm font-semibold text-courie-muted">
@@ -161,18 +169,21 @@ export function PropertyDetailPage() {
             </div>
           </div>
         </Card>
+        </Reveal>
 
+        <Reveal y={26} delay={0.08} className="min-w-0" amount={0.16}>
         <div className="space-y-4">
           <TrustCallout
             title="How reviews are shown (prototype)"
-            body="We highlight verified student reviewers and clearly label anonymous posts. A production system would add
-            fraud detection, rate limits, and structured questions (deposit, maintenance, communication) for comparability."
+            body="We highlight verified student reviewers and clearly label anonymous posts. A production system would add fraud detection, rate limits, and structured questions (deposit, maintenance, communication) for comparability."
           />
           <ListingMap listings={[listing]} activeListingId={listing.id} />
         </div>
+        </Reveal>
       </div>
 
       <section className="mt-12">
+        <Reveal y={20}>
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <h2 className="text-2xl font-black text-courie-ink">Student reviews</h2>
@@ -184,14 +195,21 @@ export function PropertyDetailPage() {
             Add yours →
           </Link>
         </div>
+        </Reveal>
 
-        <div className="mt-6 grid gap-4">
-          {reviews.length ? (
-            reviews.map((r) => <ReviewCard key={r.id} review={r} />)
-          ) : (
+        {reviews.length ? (
+          <Stagger className="mt-6 grid gap-4" stagger={0.1}>
+            {reviews.map((r) => (
+              <StaggerItem key={r.id}>
+                <ReviewCard review={r} />
+              </StaggerItem>
+            ))}
+          </Stagger>
+        ) : (
+          <Reveal y={12} className="mt-6">
             <Card className="p-6 text-sm font-semibold text-courie-muted">No reviews yet—be the first.</Card>
-          )}
-        </div>
+          </Reveal>
+        )}
       </section>
     </div>
   );

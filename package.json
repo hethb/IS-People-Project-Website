@@ -1,5 +1,5 @@
 {
-  "name": "student-roost",
+  "name": "scottys-courie",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
+    "framer-motion": "^11.18.2",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

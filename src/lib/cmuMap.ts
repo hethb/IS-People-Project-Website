@@ -1,5 +1,5 @@
 /**
- * Map defaults for the Student Roost CMU / Pittsburgh demo.
+ * Map defaults for the Scotty's Courie CMU / Pittsburgh demo.
  * CMU “Cut” approximate center (Forbes & Morewood area).
  */
 export const CMU_CENTER = { lat: 40.4429, lng: -79.9422 } as const;
