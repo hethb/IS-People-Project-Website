@@ -35,8 +35,8 @@ export function SubmitReviewPage() {
         <Badge tone="brand">Community contribution</Badge>
         <Badge tone="warning">Anonymous option</Badge>
       </div>
-      <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-900">Submit a student review</h1>
-      <p className="mt-2 max-w-3xl text-sm font-semibold leading-relaxed text-slate-600">
+      <h1 className="mt-3 text-3xl font-black tracking-tight text-courie-ink">Submit a student review</h1>
+      <p className="mt-2 max-w-3xl text-sm font-semibold leading-relaxed text-courie-muted">
         Reviews help shift power toward renters—especially when they’re specific, fair, and verifiable. This form is a
         front-end prototype (no data is saved).
       </p>
@@ -46,12 +46,12 @@ export function SubmitReviewPage() {
           {!submitted ? (
             <form className="space-y-5" onSubmit={onSubmit}>
               <div>
-                <label className="text-xs font-extrabold text-slate-700" htmlFor="listing">
+                <label className="text-xs font-extrabold text-courie-muted" htmlFor="listing">
                   Listing
                 </label>
                 <select
                   id="listing"
-                  className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+                  className="mt-2 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-3 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
                   value={listingId}
                   onChange={(e) => setListingId(e.target.value)}
                   required
@@ -66,9 +66,9 @@ export function SubmitReviewPage() {
                   ))}
                 </select>
                 {listing ? (
-                  <p className="mt-2 text-xs font-semibold text-slate-600">
-                    You’re reviewing: <span className="font-extrabold text-slate-900">{listing.title}</span>{" "}
-                    <Link className="font-extrabold text-teal-800 hover:text-teal-900" to={`/listings/${listing.id}`}>
+                  <p className="mt-2 text-xs font-semibold text-courie-muted">
+                    You’re reviewing: <span className="font-extrabold text-courie-ink">{listing.title}</span>{" "}
+                    <Link className="font-extrabold text-courie-brick hover:text-courie-brick-hover" to={`/listings/${listing.id}`}>
                       (view)
                     </Link>
                   </p>
@@ -77,10 +77,10 @@ export function SubmitReviewPage() {
 
               <div>
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-extrabold text-slate-700" htmlFor="rating">
+                  <label className="text-xs font-extrabold text-courie-muted" htmlFor="rating">
                     Overall rating
                   </label>
-                  <span className="text-xs font-extrabold text-slate-900">{rating} / 5</span>
+                  <span className="text-xs font-extrabold text-courie-ink">{rating} / 5</span>
                 </div>
                 <input
                   id="rating"
@@ -90,12 +90,12 @@ export function SubmitReviewPage() {
                   step={1}
                   value={rating}
                   onChange={(e) => setRating(Number(e.target.value))}
-                  className="mt-2 w-full accent-teal-700"
+                  className="mt-2 w-full accent-courie-brick"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-extrabold text-slate-700" htmlFor="rtitle">
+                <label className="text-xs font-extrabold text-courie-muted" htmlFor="rtitle">
                   Review title
                 </label>
                 <input
@@ -104,12 +104,12 @@ export function SubmitReviewPage() {
                   onChange={(e) => setTitle(e.target.value)}
                   required
                   placeholder="Short headline (ex: “Deposit returned on time”)"
-                  className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+                  className="mt-2 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-3 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-extrabold text-slate-700" htmlFor="rbody">
+                <label className="text-xs font-extrabold text-courie-muted" htmlFor="rbody">
                   What should other students know?
                 </label>
                 <textarea
@@ -119,43 +119,43 @@ export function SubmitReviewPage() {
                   required
                   rows={6}
                   placeholder="Be specific: communication, repairs, fees, move-in condition, safety at night…"
-                  className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+                  className="mt-2 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-3 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-extrabold text-slate-700" htmlFor="tags">
+                <label className="text-xs font-extrabold text-courie-muted" htmlFor="tags">
                   Tags (comma-separated)
                 </label>
                 <input
                   id="tags"
                   value={tags}
                   onChange={(e) => setTags(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+                  className="mt-2 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-3 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
                 />
               </div>
 
-              <label className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
+              <label className="flex items-start gap-3 rounded-lg bg-courie-cream p-4 ring-1 ring-courie-cream-deep/70">
                 <input
                   type="checkbox"
                   checked={anonymous}
                   onChange={(e) => setAnonymous(e.target.checked)}
-                  className="mt-1 h-5 w-5 accent-teal-700"
+                  className="mt-1 h-5 w-5 accent-courie-brick"
                 />
                 <span>
-                  <span className="text-sm font-extrabold text-slate-900">Post anonymously</span>
-                  <span className="mt-1 block text-xs font-semibold leading-relaxed text-slate-600">
+                  <span className="text-sm font-extrabold text-courie-ink">Post anonymously</span>
+                  <span className="mt-1 block text-xs font-semibold leading-relaxed text-courie-muted">
                     Privacy calculus: anonymity can increase honesty, but platforms still need abuse prevention. This demo
                     simply toggles the UI promise.
                   </span>
                 </span>
               </label>
 
-              <label className="flex items-start gap-3 rounded-2xl bg-white p-4 ring-1 ring-slate-200/70">
-                <input type="checkbox" disabled className="mt-1 h-5 w-5 accent-slate-400" />
+              <label className="flex items-start gap-3 rounded-lg bg-white p-4 ring-1 ring-courie-cream-deep/70">
+                <input type="checkbox" disabled className="mt-1 h-5 w-5 accent-courie-muted/50" />
                 <span>
-                  <span className="text-sm font-extrabold text-slate-900">Verified student (demo disabled)</span>
-                  <span className="mt-1 block text-xs font-semibold leading-relaxed text-slate-600">
+                  <span className="text-sm font-extrabold text-courie-ink">Verified student (demo disabled)</span>
+                  <span className="mt-1 block text-xs font-semibold leading-relaxed text-courie-muted">
                     In production, verification might require a school email + enrollment check, with clear disclosure.
                   </span>
                 </span>
@@ -174,8 +174,8 @@ export function SubmitReviewPage() {
             </form>
           ) : (
             <div>
-              <h2 className="text-xl font-black text-slate-900">Thanks—your review would be queued next</h2>
-              <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-600">
+              <h2 className="text-xl font-black text-courie-ink">Thanks—your review would be queued next</h2>
+              <p className="mt-2 text-sm font-semibold leading-relaxed text-courie-muted">
                 This prototype doesn’t persist data. For your demo, treat this as the “happy path” confirmation screen.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -207,8 +207,8 @@ export function SubmitReviewPage() {
             and make the marketplace more valuable for everyone—posters and searchers alike."
           />
           <Card className="p-6">
-            <p className="text-sm font-extrabold text-slate-900">Moderation notes (example)</p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-600">
+            <p className="text-sm font-extrabold text-courie-ink">Moderation notes (example)</p>
+            <p className="mt-2 text-sm font-semibold leading-relaxed text-courie-muted">
               Student Roost could publish how reviews are screened, what counts as evidence, and how landlords can respond
               without chilling honest criticism.
             </p>

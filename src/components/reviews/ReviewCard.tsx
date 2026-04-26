@@ -21,19 +21,19 @@ export function ReviewCard({ review }: Props) {
             {review.verifiedStudent ? <VerifiedStudentPill /> : null}
             {review.anonymous ? <Badge tone="warning">Anonymous</Badge> : null}
           </div>
-          <p className="mt-2 text-base font-bold text-slate-900">{review.title}</p>
-          <p className="mt-1 text-sm leading-relaxed text-slate-700">{review.body}</p>
+          <p className="mt-2 text-base font-bold text-courie-ink">{review.title}</p>
+          <p className="mt-1 text-sm leading-relaxed text-courie-muted">{review.body}</p>
         </div>
         <div className="text-left sm:text-right">
-          <p className="text-xs font-semibold text-slate-500">{who}</p>
-          <p className="mt-1 text-xs font-semibold text-slate-400">{review.createdAt}</p>
+          <p className="text-xs font-semibold text-courie-muted/90">{who}</p>
+          <p className="mt-1 text-xs font-semibold text-courie-muted/70">{review.createdAt}</p>
         </div>
       </div>
 
       {review.tags.length ? (
         <div className="mt-4 flex flex-wrap gap-2">
           {review.tags.map((t) => (
-            <span key={t} className="rounded-full bg-slate-50 px-2.5 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200/60">
+            <span key={t} className="rounded-sm bg-courie-cream px-2.5 py-1 text-xs font-semibold text-courie-muted ring-1 ring-courie-cream-deep/60">
               {t}
             </span>
           ))}

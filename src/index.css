@@ -9,6 +9,6 @@
   }
 
   *:focus-visible {
-    @apply outline-none ring-2 ring-teal-500/40 ring-offset-2 ring-offset-slate-50;
+    @apply outline-none ring-2 ring-courie-gold/50 ring-offset-2 ring-offset-courie-cream;
   }
 }

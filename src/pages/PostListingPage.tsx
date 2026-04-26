@@ -24,8 +24,8 @@ export function PostListingPage() {
         <Badge tone="brand">Supply-side</Badge>
         <Badge tone="neutral">Mock form</Badge>
       </div>
-      <h1 className="mt-3 text-3xl font-black tracking-tight text-slate-900">Post a listing</h1>
-      <p className="mt-2 max-w-3xl text-sm font-semibold leading-relaxed text-slate-600">
+      <h1 className="mt-3 text-3xl font-black tracking-tight text-courie-ink">Post a listing</h1>
+      <p className="mt-2 max-w-3xl text-sm font-semibold leading-relaxed text-courie-muted">
         A strong student marketplace needs trustworthy inventory. This page is a realistic intake form UI—connect it to
         your backend later.
       </p>
@@ -73,15 +73,15 @@ export function PostListingPage() {
               </div>
 
               <div>
-                <label className="text-xs font-extrabold text-slate-700" htmlFor="leases">
+                <label className="text-xs font-extrabold text-courie-muted" htmlFor="leases">
                   Lease types offered
                 </label>
-                <p className="mt-1 text-xs font-semibold text-slate-500">Hold Cmd/Ctrl to select multiple (demo).</p>
+                <p className="mt-1 text-xs font-semibold text-courie-muted/90">Hold Cmd/Ctrl to select multiple (demo).</p>
                 <select
                   id="leases"
                   multiple
                   required
-                  className="mt-2 h-28 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+                  className="mt-2 h-28 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-2 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
                 >
                   <option>Semester</option>
                   <option>Academic year</option>
@@ -93,9 +93,9 @@ export function PostListingPage() {
               <Field label="Photo URL (demo)" id="img" placeholder="https://…" />
               <Field label="Transparency: fees & move-in costs" id="fees" placeholder="Ex: admin fee $35; refundable deposit 1x rent" />
 
-              <label className="flex items-start gap-3 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
-                <input type="checkbox" required className="mt-1 h-5 w-5 accent-teal-700" />
-                <span className="text-sm font-semibold leading-relaxed text-slate-700">
+              <label className="flex items-start gap-3 rounded-lg bg-courie-cream p-4 ring-1 ring-courie-cream-deep/70">
+                <input type="checkbox" required className="mt-1 h-5 w-5 accent-courie-brick" />
+                <span className="text-sm font-semibold leading-relaxed text-courie-muted">
                   I agree to post accurate information and understand reviews may be publicly visible (prototype copy).
                 </span>
               </label>
@@ -113,8 +113,8 @@ export function PostListingPage() {
             </form>
           ) : (
             <div>
-              <h2 className="text-xl font-black text-slate-900">Listing received (mock)</h2>
-              <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-600">
+              <h2 className="text-xl font-black text-courie-ink">Listing received (mock)</h2>
+              <p className="mt-2 text-sm font-semibold leading-relaxed text-courie-muted">
                 In a real workflow you’d verify ownership, dedupe spam, and optionally highlight student-friendly lease
                 options once validated.
               </p>
@@ -139,8 +139,8 @@ export function PostListingPage() {
             and safety-relevant building features. That reduces wasted tours and builds trust faster."
           />
           <Card className="p-6">
-            <p className="text-sm font-extrabold text-slate-900">Trust prompts you can mention in class</p>
-            <ul className="mt-3 space-y-2 text-sm font-semibold text-slate-700">
+            <p className="text-sm font-extrabold text-courie-ink">Trust prompts you can mention in class</p>
+            <ul className="mt-3 space-y-2 text-sm font-semibold text-courie-muted">
               <li>Identity verification for landlords (concept)</li>
               <li>Fee disclosure checklist (concept)</li>
               <li>Review authenticity signals + appeals (concept)</li>
@@ -165,7 +165,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-xs font-extrabold text-slate-700" htmlFor={id}>
+      <label className="text-xs font-extrabold text-courie-muted" htmlFor={id}>
         {label}
       </label>
       <input
@@ -173,7 +173,7 @@ function Field({
         placeholder={placeholder}
         inputMode={inputMode}
         required
-        className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+        className="mt-2 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-3 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
       />
     </div>
   );
@@ -190,13 +190,13 @@ function Select({
 }) {
   return (
     <div>
-      <label className="text-xs font-extrabold text-slate-700" htmlFor={id}>
+      <label className="text-xs font-extrabold text-courie-muted" htmlFor={id}>
         {label}
       </label>
       <select
         id={id}
         required
-        className="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm font-semibold text-slate-900 outline-none ring-teal-500/30 focus:ring-4"
+        className="mt-2 w-full rounded-sm border border-courie-cream-deep bg-white px-3 py-3 text-sm font-semibold text-courie-ink outline-none ring-courie-brick/30 focus:ring-4"
       >
         {options.map((o) => (
           <option key={o.v} value={o.v}>
@@ -210,9 +210,9 @@ function Select({
 
 function ToggleRow({ label, id }: { label: string; id: string }) {
   return (
-    <label className="flex items-center justify-between gap-4 rounded-xl bg-slate-50 px-3 py-3 ring-1 ring-slate-200/70">
-      <span className="text-sm font-extrabold text-slate-900">{label}</span>
-      <input id={id} type="checkbox" className="h-5 w-5 accent-teal-700" />
+    <label className="flex items-center justify-between gap-4 rounded-sm bg-courie-cream px-3 py-3 ring-1 ring-courie-cream-deep/70">
+      <span className="text-sm font-extrabold text-courie-ink">{label}</span>
+      <input id={id} type="checkbox" className="h-5 w-5 accent-courie-brick" />
     </label>
   );
 }

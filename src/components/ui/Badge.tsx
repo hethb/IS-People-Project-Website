@@ -6,15 +6,15 @@ type Props = {
 /** Compact label for trust signals + filters */
 export function Badge({ children, tone = "neutral" }: Props) {
   const tones: Record<NonNullable<Props["tone"]>, string> = {
-    neutral: "bg-slate-100 text-slate-700 ring-slate-200/60",
-    success: "bg-emerald-50 text-emerald-800 ring-emerald-200/60",
-    warning: "bg-amber-50 text-amber-900 ring-amber-200/60",
-    brand: "bg-teal-50 text-teal-900 ring-teal-200/60",
+    neutral: "bg-courie-cream-deep/80 text-courie-muted ring-courie-cream-deep",
+    success: "bg-white/90 text-courie-brick ring-courie-brick/25",
+    warning: "bg-courie-gold/25 text-courie-ink ring-courie-gold/50",
+    brand: "bg-courie-brick text-white ring-white/25",
   };
 
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset ${tones[tone]}`}
+      className={`inline-flex items-center rounded-sm px-2.5 py-1 text-xs font-semibold ring-1 ring-inset ${tones[tone]}`}
     >
       {children}
     </span>

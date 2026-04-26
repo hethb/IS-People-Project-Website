@@ -17,10 +17,10 @@ export function LandlordProfilePage() {
     return (
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <Card className="p-8">
-          <h1 className="text-2xl font-black text-slate-900">Profile not found</h1>
-          <p className="mt-2 text-sm font-semibold text-slate-600">This ID isn’t in the mock dataset.</p>
+          <h1 className="text-2xl font-black text-courie-ink">Profile not found</h1>
+          <p className="mt-2 text-sm font-semibold text-courie-muted">This ID isn’t in the mock dataset.</p>
           <div className="mt-6">
-            <Link to="/listings" className="text-sm font-extrabold text-teal-800 hover:text-teal-900">
+            <Link to="/listings" className="text-sm font-extrabold text-courie-brick hover:text-courie-brick-hover">
               ← Back to browse
             </Link>
           </div>
@@ -42,21 +42,21 @@ export function LandlordProfilePage() {
 
       <div className="mt-4 grid gap-6 lg:grid-cols-3 lg:items-start">
         <Card className="p-6 lg:col-span-2">
-          <h1 className="text-3xl font-black tracking-tight text-slate-900">{landlord.name}</h1>
-          <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-700">{landlord.bio}</p>
+          <h1 className="text-3xl font-black tracking-tight text-courie-ink">{landlord.name}</h1>
+          <p className="mt-3 text-sm font-semibold leading-relaxed text-courie-muted">{landlord.bio}</p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
-              <p className="text-xs font-bold text-slate-500">Response time</p>
-              <p className="mt-1 text-sm font-extrabold text-slate-900">{landlord.responseTimeLabel}</p>
+            <div className="rounded-lg bg-courie-cream p-4 ring-1 ring-courie-cream-deep/70">
+              <p className="text-xs font-bold text-courie-muted/90">Response time</p>
+              <p className="mt-1 text-sm font-extrabold text-courie-ink">{landlord.responseTimeLabel}</p>
             </div>
-            <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
-              <p className="text-xs font-bold text-slate-500">Years active</p>
-              <p className="mt-1 text-sm font-extrabold text-slate-900">{landlord.yearsActive}+</p>
+            <div className="rounded-lg bg-courie-cream p-4 ring-1 ring-courie-cream-deep/70">
+              <p className="text-xs font-bold text-courie-muted/90">Years active</p>
+              <p className="mt-1 text-sm font-extrabold text-courie-ink">{landlord.yearsActive}+</p>
             </div>
-            <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200/70">
-              <p className="text-xs font-bold text-slate-500">Open listings</p>
-              <p className="mt-1 text-sm font-extrabold text-slate-900">{listings.length} in demo</p>
+            <div className="rounded-lg bg-courie-cream p-4 ring-1 ring-courie-cream-deep/70">
+              <p className="text-xs font-bold text-courie-muted/90">Open listings</p>
+              <p className="mt-1 text-sm font-extrabold text-courie-ink">{listings.length} in demo</p>
             </div>
           </div>
 
@@ -68,13 +68,13 @@ export function LandlordProfilePage() {
         </Card>
 
         <Card className="p-6">
-          <p className="text-sm font-extrabold text-slate-900">For your class narrative</p>
-          <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-600">
+          <p className="text-sm font-extrabold text-courie-ink">For your class narrative</p>
+          <p className="mt-2 text-sm font-semibold leading-relaxed text-courie-muted">
             A landlord profile is where “network effects” meet “trust theory”: more reviews make profiles more informative,
             which attracts more renters—if the platform protects authenticity.
           </p>
           <div className="mt-4">
-            <Link to="/reviews/new" className="text-sm font-extrabold text-teal-800 hover:text-teal-900">
+            <Link to="/reviews/new" className="text-sm font-extrabold text-courie-brick hover:text-courie-brick-hover">
               Write a review →
             </Link>
           </div>
@@ -82,7 +82,7 @@ export function LandlordProfilePage() {
       </div>
 
       <section className="mt-10">
-        <h2 className="text-xl font-black text-slate-900">Active listings (demo subset)</h2>
+        <h2 className="text-xl font-black text-courie-ink">Active listings (demo subset)</h2>
         <div className="mt-5 grid gap-5 lg:grid-cols-3">
           {listings.map((l) => (
             <ListingCard key={l.id} listing={l} />
@@ -91,7 +91,7 @@ export function LandlordProfilePage() {
       </section>
 
       <section className="mt-12">
-        <h2 className="text-xl font-black text-slate-900">Recent reviews</h2>
+        <h2 className="text-xl font-black text-courie-ink">Recent reviews</h2>
         <div className="mt-5 grid gap-4">
           {reviews.map((r) => (
             <ReviewCard key={r.id} review={r} />

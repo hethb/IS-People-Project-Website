@@ -18,7 +18,7 @@ export function StarRating({ value, reviewCount, size = "md" }: Props) {
   const starClass = size === "sm" ? "h-4 w-4" : "h-5 w-5";
 
   const Star = ({ kind }: { kind: "full" | "empty" }) => {
-    const fill = kind === "full" ? "text-amber-400" : "text-slate-200";
+    const fill = kind === "full" ? "text-courie-gold" : "text-courie-cream-deep";
     return (
       <svg viewBox="0 0 20 20" className={`${starClass} ${fill}`} aria-hidden="true">
         <path
@@ -36,8 +36,8 @@ export function StarRating({ value, reviewCount, size = "md" }: Props) {
           <Star key={i} kind={i < filled ? "full" : "empty"} />
         ))}
       </div>
-      <div className="text-sm text-slate-600">
-        <span className="font-semibold text-slate-900">{v.toFixed(1)}</span>
+      <div className="text-sm text-courie-muted">
+        <span className="font-semibold text-courie-ink">{v.toFixed(1)}</span>
         {typeof reviewCount === "number" ? <span> · {reviewCount} reviews</span> : null}
       </div>
     </div>
